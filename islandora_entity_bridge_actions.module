@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file
+ * Module file for the Islandora Entity Bridge Actions module.
+ */
+
+/**
+ * Implements hook_action_info().
+ */
+function islandora_entity_bridge_actions_action_info() {
+  $actions = array();
+
+  $actions['islandora_entity_bridge_actions_object_label_action'] = array(
+    'type' => 'islandora_entity_bridge',
+    'label' => t("Change an Islandora object's label"),
+    'configurable' => FALSE,
+  );
+
+  return $actions;
+}
+
+/**
+ * Changes an object's title to 'Hi from entity object bridge actions'.
+ */
+function islandora_entity_bridge_actions_object_label_action($islandora_entity_bridge_object, $context) {
+  $islandora_object = islandora_object_load($islandora_entity_bridge_object->pid);
+  $islandora_object->label = 'Hi from entity object bridge actions';
+}

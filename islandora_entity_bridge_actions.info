@@ -1,0 +1,5 @@
+name = Islandora Entity Bridge Actions
+description = Action pack for Islandora Entity Bridge
+core = 7.x
+package = Islandora Tools
+dependencies[] = islandora_entity_bridge
